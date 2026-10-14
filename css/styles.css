@@ -1,25 +1,42 @@
-/* HW7: global box-model fix */
-html { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; }
 
-/* Color Palette
-#F7F4F8 - Soft Off-White
-#E9E0EE - Light Lavender
-#DCCFE5 - Muted Lavender
-#6F4B7B - Plum Accent
-#2B2030 - Dark Plum Text
-*/
+/* =========================================
+   HW7 RESUME SITE
+   Benjamin Maldonado
 
-/* Global styles 
-------------------------------------*/
+   Color Palette:
+   #F7F4F8 - Soft Off-White
+   #E9E0EE - Light Lavender
+   #DCCFE5 - Muted Lavender
+   #6F4B7B - Plum Accent
+   #2B2030 - Dark Plum Text
+   ========================================= */
+
+
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+
+/* Box model fix */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Body */
 body {
+    margin: 0;
     background: #F7F4F8;
     color: #2B2030;
     font-family: "Open Sans", Arial, sans-serif;
-    margin: 0;
     line-height: 1.6;
 }
 
+/* Headings */
 h1,
 h2,
 h3 {
@@ -28,14 +45,15 @@ h3 {
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin: 0;
 }
 
 h2 {
     font-size: 28px;
     font-weight: 600;
+    margin-top: 0;
 }
 
 h3 {
@@ -49,51 +67,99 @@ a {
     font-weight: 400;
 }
 
-header,
-section,
-footer {
-    padding: 28px 10%;
+/* Content wrapper - HW7 requirement */
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
 }
 
-main {
-    background: #F7F4F8;
+/* Reusable columns - HW7 requirement */
+.column-narrow {
+    width: 30%;
+    float: left;
+    padding-right: 3%;
+    min-height: 175px;
+}
+
+.column-wide {
+    width: 70%;
+    float: left;
+    min-height: 225px;
 }
 
 
-/* Header & Footer 
-------------------------------------*/
+/* =========================================
+   HEADER
+   ========================================= */
+
 header {
     background: #E9E0EE;
     color: #2B2030;
 }
 
+/* Keep name and tagline close together */
+header h1,
 header h2 {
-    color: #6F4B7B;
+    margin: 0;
 }
 
-header img {
-    width: 170px;
-    height: 170px;
+header h1 {
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+header h2 {
+    color: #6F4B7B;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 12px;
+}
+
+/* Profile picture */
+.profile-img {
+    display: block;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center 38%;
     border-radius: 50%;
     border: 4px solid #6F4B7B;
 }
 
-footer {
-    background: #DCCFE5;
-    color: #2B2030;
+/* Add spacing between image and text */
+header .column-narrow {
+    padding-right: 30px;
 }
 
-footer a {
-    color: #5A3C65;
-    font-weight: 600;
-    margin-right: 18px;
+header .column-wide {
+    padding-left: 10px;
+}
+
+/* Professional summary */
+header .column-wide p {
+    margin-top: 18px;
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 
-/* Work Experience
-------------------------------------*/
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+main {
+    background: #F7F4F8;
+}
+
+
+/* =========================================
+   WORK EXPERIENCE
+   ========================================= */
+
 .work-experience {
     background: #F3EDF6;
     color: #2B2030;
@@ -104,9 +170,54 @@ footer a {
     color: #5A3C65;
 }
 
+.work-experience h2 {
+    margin-bottom: 35px;
+}
 
-/* Education
-------------------------------------*/
+.work-experience h3 {
+    font-size: 19px;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Job information column */
+.work-experience .column-narrow {
+    padding-right: 25px;
+}
+
+.work-experience .column-narrow p {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Job description column */
+.work-experience .column-wide p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.work-experience ul {
+    padding-left: 22px;
+    margin-top: 10px;
+}
+
+.work-experience li {
+    margin-bottom: 8px;
+}
+
+/* Clear floats after each job */
+.job-entry::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* =========================================
+   EDUCATION
+   ========================================= */
+
 .education {
     background: #EDE5F1;
     color: #2B2030;
@@ -117,20 +228,163 @@ footer a {
     color: #5A3C65;
 }
 
-/* HW7: centered content wrappers and two-column layout */
-header, section, footer { padding: 0; }
-.content-wrap { max-width: 950px; margin: 0 auto; padding: 50px; overflow: hidden; }
-h2 { margin-top: 0; }
-header h1, header h2 { margin: 0; }
-.profile-img { border-radius: 50%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
-.column-narrow { width: 30%; float: left; padding-right: 3%; min-height: 175px; }
-.column-wide { width: 70%; float: left; min-height: 225px; }
-.job-entry::after { content: ""; display: table; clear: both; }
-footer { text-align: center; }
-.contact-info a { padding: 10px; display: inline-block; margin-right: 0; }
+.education h2 {
+    margin-bottom: 30px;
+}
+
+.education h3 {
+    margin-bottom: 12px;
+}
+
+.education p {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #DCCFE5;
+    color: #2B2030;
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #5A3C65;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* HW7 contact-info requirement */
+.contact-info a {
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Link hover effects */
+.contact-info a:hover {
+    color: #2B2030;
+    text-decoration: underline;
+}
+
+.contact-info a:focus-visible {
+    outline: 2px solid #6F4B7B;
+    outline-offset: 3px;
+}
+
+footer p {
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* Tablets */
+@media (max-width: 850px) {
+
+    .content-wrap {
+        padding: 40px 30px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header h2 {
+        font-size: 18px;
+    }
+
+    .profile-img {
+        max-width: 190px;
+    }
+
+    header .column-narrow {
+        padding-right: 22px;
+    }
+
+    header .column-wide p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile phones */
 @media (max-width: 650px) {
-  .content-wrap { padding: 28px 22px; }
-  .column-narrow, .column-wide { width: 100%; float: none; padding-right: 0; min-height: 0; }
-  .profile-img { display: block; max-width: 260px; margin: 0 auto 24px; }
-  header { text-align: center; }
+
+    .content-wrap {
+        padding: 30px 22px;
+    }
+
+    /* Stack columns vertically */
+    .column-narrow,
+    .column-wide {
+        width: 100%;
+        float: none;
+        padding-right: 0;
+        min-height: 0;
+    }
+
+    /* Center header */
+    header {
+        text-align: center;
+    }
+
+    header .column-narrow {
+        padding-right: 0;
+    }
+
+    header .column-wide {
+        padding-left: 0;
+    }
+
+    /* Profile picture */
+    .profile-img {
+        width: 200px;
+        max-width: 100%;
+        margin: 0 auto 25px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header h2 {
+        font-size: 19px;
+        margin-top: 10px;
+    }
+
+    header .column-wide p {
+        font-size: 15px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    /* Work experience */
+    .work-experience h2 {
+        margin-bottom: 25px;
+    }
+
+    .work-experience .column-narrow {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .work-experience .column-wide {
+        padding-left: 0;
+    }
+
+    /* Footer links */
+    .contact-info a {
+        padding: 10px 12px;
+    }
 }
