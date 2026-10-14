@@ -120,7 +120,7 @@ header h2 {
 /* Profile picture */
 .profile-img {
     display: block;
-    max-width: 220px;
+    max-width: auto;
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
