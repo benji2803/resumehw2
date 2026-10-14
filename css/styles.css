@@ -399,3 +399,22 @@ header .column-wide p { font-size:15px; line-height:1.7; margin-top:18px; }
 .work-experience .column-narrow { padding-right:25px; }
 .work-experience h3 { line-height:1.4; }
 @media (max-width:650px) { header .column-narrow { padding-right:0; } header .column-wide { padding-left:0; } header .profile-img { width:200px; max-width:100%; margin:0 auto 25px; } }
+
+/* Final HW7 visual alignment: maintain the assignment's floated columns. */
+header .content-wrap { padding-top: 65px; padding-bottom: 65px; }
+header .profile-img { max-width: 200px; margin: 0; }
+header .column-narrow { padding-right: 32px; }
+header .column-wide { padding-left: 0; }
+header h1 { font-size: 32px; line-height: 1.2; }
+header h2 { font-size: 18px; line-height: 1.45; margin-top: 10px; }
+header .column-wide p { font-size: 15px; margin-top: 16px; line-height: 1.7; }
+.work-experience h2 { margin-bottom: 22px; }
+.work-experience .column-narrow { padding-right: 30px; }
+@media (max-width: 650px) {
+  header .content-wrap { padding-top: 35px; padding-bottom: 35px; }
+  header .profile-img { max-width: 190px; margin: 0 auto 24px; }
+  header .column-narrow { padding-right: 0; }
+  header h1 { font-size: 29px; }
+  header h2 { font-size: 18px; }
+  .work-experience .column-narrow { padding-right: 0; }
+}
