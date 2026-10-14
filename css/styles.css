@@ -37,13 +37,15 @@ header { background: #E9E0EE; }
 header h1, header h2 { margin: 0; }
 header h2 { color: #6F4B7B; }
 .profile-img {
-  /* The HW7 .column-narrow class controls the 30% floated width. */
+  /* Preserve HW7's 30% floated column while making the portrait circular. */
+  display: block;
   aspect-ratio: 1 / 1;
   height: auto;
   object-fit: cover;
   object-position: center 38%;
   border-radius: 50%;
   border: 4px solid #6F4B7B;
+  padding: 0;
 }
 /* Work experience */
 .work-experience { background: #F3EDF6; }
