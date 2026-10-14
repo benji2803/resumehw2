@@ -125,7 +125,7 @@ header h2 {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: cover;
-    border-radius: 50%;
+    border-radius: cover;
     border: 4px solid #6F4B7B;
 }
 
