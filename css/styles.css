@@ -132,3 +132,14 @@ footer { text-align: center; }
   .profile-img { display: block; max-width: 260px; margin: 0 auto 24px; }
   header { text-align: center; }
 }
+
+/* Header visual corrections; preserve HW7 floated columns. */
+header .profile-img { display:block; width:100%; max-width:220px; height:auto; aspect-ratio:1/1; }
+header .column-narrow { padding-right:30px; }
+header .column-wide { padding-left:10px; }
+header h1 { font-size:34px; line-height:1.2; }
+header h2 { font-size:20px; line-height:1.4; margin-top:12px; }
+header .column-wide p { font-size:15px; line-height:1.7; margin-top:18px; }
+.work-experience .column-narrow { padding-right:25px; }
+.work-experience h3 { line-height:1.4; }
+@media (max-width:650px) { header .column-narrow { padding-right:0; } header .column-wide { padding-left:0; } header .profile-img { width:200px; max-width:100%; margin:0 auto 25px; } }
