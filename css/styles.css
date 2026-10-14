@@ -132,3 +132,25 @@ footer { text-align: center; }
   .profile-img { display: block; max-width: 260px; margin: 0 auto 24px; }
   header { text-align: center; }
 }
+
+/* Visual polish: retain the HW7 float-based 30/70 column exercise. */
+header .content-wrap { max-width: 1120px; }
+header .column-narrow { padding-right: 38px; }
+header .profile-img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+header .column-wide { padding-left: 8px; }
+header h1 { font-size: clamp(30px, 3vw, 40px); line-height: 1.2; }
+header h2 { font-size: clamp(19px, 2vw, 24px); line-height: 1.35; margin-top: 10px; }
+header .column-wide p { margin-top: 18px; }
+.work-experience .column-narrow { padding-right: 28px; }
+.work-experience h3 { line-height: 1.35; }
+@media (max-width: 650px) {
+  header .column-narrow { padding-right: 0; }
+  header .profile-img { margin: 0 auto 24px; }
+  header .column-wide { padding-left: 0; }
+}
