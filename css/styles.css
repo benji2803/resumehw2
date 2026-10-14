@@ -1,3 +1,7 @@
+/* HW7: global box-model fix */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
 /* Color Palette
 #F7F4F8 - Soft Off-White
 #E9E0EE - Light Lavender
@@ -111,4 +115,22 @@ footer a {
 .education h2,
 .education h3 {
     color: #5A3C65;
+}
+
+/* HW7: centered content wrappers and two-column layout */
+header, section, footer { padding: 0; }
+.content-wrap { max-width: 950px; margin: 0 auto; padding: 50px; overflow: hidden; }
+h2 { margin-top: 0; }
+header h1, header h2 { margin: 0; }
+.profile-img { border-radius: 50%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+.column-narrow { width: 30%; float: left; padding-right: 3%; min-height: 175px; }
+.column-wide { width: 70%; float: left; min-height: 225px; }
+.job-entry::after { content: ""; display: table; clear: both; }
+footer { text-align: center; }
+.contact-info a { padding: 10px; display: inline-block; margin-right: 0; }
+@media (max-width: 650px) {
+  .content-wrap { padding: 28px 22px; }
+  .column-narrow, .column-wide { width: 100%; float: none; padding-right: 0; min-height: 0; }
+  .profile-img { display: block; max-width: 260px; margin: 0 auto 24px; }
+  header { text-align: center; }
 }
